@@ -1,0 +1,80 @@
+.grid {
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  z-index: -5;
+}
+
+.glowOne,
+.glowTwo,
+.glowThree {
+  position: fixed;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  z-index: -4;
+
+  animation: move 15s ease-in-out infinite;
+}
+
+.glowOne {
+  width: 350px;
+  height: 350px;
+
+  background: #6c63ff;
+
+  top: -120px;
+  left: -120px;
+
+  opacity: 0.35;
+}
+
+.glowTwo {
+  width: 320px;
+  height: 320px;
+
+  background: #00d4ff;
+
+  right: -100px;
+  bottom: -120px;
+
+  opacity: 0.25;
+
+  animation-delay: 4s;
+}
+
+.glowThree {
+  width: 280px;
+  height: 280px;
+
+  background: #7c3aed;
+
+  top: 40%;
+  left: 50%;
+
+  opacity: 0.18;
+
+  animation-delay: 7s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(40px) translateX(30px);
+  }
+
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}

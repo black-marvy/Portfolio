@@ -1,0 +1,180 @@
+.experience {
+  position: relative;
+}
+
+.heading {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.heading span {
+  display: inline-block;
+  padding: 8px 18px;
+  margin-bottom: 20px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+
+  color: var(--accent);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.heading h2 {
+  color: var(--white);
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.heading p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+
+  left: 35px;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: linear-gradient(var(--primary), var(--secondary));
+}
+
+.item {
+  position: relative;
+
+  display: flex;
+  gap: 30px;
+
+  margin-bottom: 50px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+
+  min-width: 70px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.7rem;
+
+  color: white;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  z-index: 2;
+
+  box-shadow: var(--shadow);
+}
+
+.content {
+  flex: 1;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+
+  transition: var(--transition);
+}
+
+.content:hover {
+  transform: translateY(-8px);
+
+  border-color: var(--primary);
+
+  box-shadow: var(--shadow);
+}
+
+.content span {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.content h3 {
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.content h4 {
+  color: #bdbdbd;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+.content p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 28px;
+  }
+
+  .item {
+    gap: 18px;
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+
+    min-width: 56px;
+
+    font-size: 1.3rem;
+  }
+
+  .content {
+    padding: 22px;
+  }
+
+  .heading h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .timeline::before {
+    display: none;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icon {
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,33 @@
+:root {
+  /* Brand */
+  --clr-primary: #d4af37;
+  --clr-primary-light: #f6d56d;
+
+  /* Background */
+  --clr-bg: #050505;
+  --clr-surface: #0d0d0d;
+  --clr-card: #171717;
+
+  /* Text */
+  --clr-white: #ffffff;
+  --clr-text: #d6d6d6;
+  --clr-muted: #8a8a8a;
+
+  /* Borders */
+  --clr-border: rgba(255, 255, 255, 0.08);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  /* Shadow */
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  /* Transition */
+  --transition: 0.35s ease;
+
+  /* Container */
+  --container: 1300px;
+}

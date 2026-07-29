@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* COLORS */
+
+  --bg: #07090f;
+  --bg-secondary: #10131c;
+  --card: #141824;
+
+  --primary: #4f7cff;
+  --secondary: #7b61ff;
+  --accent: #00d4ff;
+
+  --white: #ffffff;
+  --text: #e4e7ec;
+  --gray: #98a2b3;
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* CONTAINER */
+
+  --container: 1200px;
+
+  /* EFFECTS */
+
+  --radius: 18px;
+
+  --transition: 0.35s ease;
+
+  --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+
+  display: block;
+}
+
+button {
+  border: none;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: min(92%, var(--container));
+
+  margin: auto;
+}
+
+section {
+  padding: 110px 0;
+}
+body.light {
+  --background: #f7f7f7;
+
+  --surface: #ffffff;
+
+  --white: #111;
+
+  --muted: #555;
+
+  --border: #d9d9d9;
+
+  background: var(--background);
+
+  color: var(--white);
+}

@@ -1,0 +1,160 @@
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDownload,
+  FaArrowRight,
+  FaReact,
+  FaNodeJs,
+  FaJsSquare,
+} from "react-icons/fa";
+import { SiExpress, SiVite } from "react-icons/si";
+import { TypeAnimation } from "react-type-animation";
+import styles from "./Hero.module.css";
+import profile from "../../assets/image/profile.png";
+
+function Hero() {
+  return (
+    <section className={styles.hero} id="home">
+      {/* Background Effects */}
+      <div className={styles.blurOne}></div>
+      <div className={styles.blurTwo}></div>
+
+      <div className="container">
+        <div className={styles.wrapper}>
+          {/* ================= LEFT ================= */}
+
+          <motion.div
+            className={styles.left}
+            initial={{ opacity: 0, x: -70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className={styles.badge}>👋 Welcome to Black Marvy Tech</span>
+
+            <h1>
+              Building
+              <span> Modern Digital </span>
+              Experiences
+            </h1>
+
+            <div className={styles.typing}>
+              <TypeAnimation
+                sequence={[
+                  "Frontend Developer",
+                  2000,
+                  "React Developer",
+                  2000,
+                  "JavaScript Developer",
+                  2000,
+                  "Node.js Developer",
+                  2000,
+                ]}
+                speed={40}
+                repeat={Infinity}
+              />
+            </div>
+
+            <p>
+              I design and build fast, responsive and visually stunning web
+              applications using React, JavaScript, Node.js and Express with a
+              strong focus on performance, accessibility and user experience.
+            </p>
+
+            <div className={styles.buttons}>
+              <a href="#contact" className={styles.primary}>
+                Hire Me
+                <FaArrowRight />
+              </a>
+
+              <a href="/resume.pdf" className={styles.secondary}>
+                <FaDownload />
+                Download CV
+              </a>
+            </div>
+
+            <div className={styles.socials}>
+              <a
+                href="https://github.com/black-marvy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/emmanuel-marvel-6b49353b5/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* ================= RIGHT ================= */}
+
+          <motion.div
+            className={styles.right}
+            initial={{ opacity: 0, x: 70 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className={styles.imageWrapper}>
+              {/* Floating Icons */}
+
+              <div className={`${styles.icon} ${styles.react}`}>
+                <FaReact />
+              </div>
+
+              <div className={`${styles.icon} ${styles.node}`}>
+                <FaNodeJs />
+              </div>
+
+              <div className={`${styles.icon} ${styles.js}`}>
+                <FaJsSquare />
+              </div>
+
+              <div className={`${styles.icon} ${styles.express}`}>
+                <SiExpress />
+              </div>
+
+              <div className={`${styles.icon} ${styles.vite}`}>
+                <SiVite />
+              </div>
+
+              {/* Rings */}
+
+              <div className={styles.ringOne}></div>
+              <div className={styles.ringTwo}></div>
+
+              {/* Profile */}
+
+              <div className={styles.imageBox}>
+               <img src= {profile}  alt="" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+
+        <motion.a
+          href="#about"
+          className={styles.scroll}
+          animate={{
+            y: [0, 12, 0],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.8,
+          }}
+        >
+          Scroll Down
+        </motion.a>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
