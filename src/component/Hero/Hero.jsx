@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -10,19 +11,22 @@ import {
 } from "react-icons/fa";
 import { SiExpress, SiVite } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
+
 import styles from "./Hero.module.css";
 import profile from "../../assets/image/profile.png";
 
 function Hero() {
   return (
     <section className={styles.hero} id="home">
+
       {/* Background Effects */}
       <div className={styles.blurOne}></div>
       <div className={styles.blurTwo}></div>
 
       <div className="container">
         <div className={styles.wrapper}>
-          {/* ================= LEFT ================= */}
+
+          {/* ================= LEFT SIDE ================= */}
 
           <motion.div
             className={styles.left}
@@ -30,7 +34,10 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={styles.badge}>👋 Welcome to Black Marvy Tech</span>
+
+            <span className={styles.badge}>
+              👋 Welcome to Black Marvy Tech
+            </span>
 
             <h1>
               Building
@@ -57,27 +64,44 @@ function Hero() {
 
             <p>
               I design and build fast, responsive and visually stunning web
-              applications using React, JavaScript, Node.js and Express with a
-              strong focus on performance, accessibility and user experience.
+              applications using React, JavaScript, Node.js and Express, with
+              a strong focus on performance, accessibility and user experience.
             </p>
 
+            {/* Buttons */}
+
             <div className={styles.buttons}>
-              <a href="#contact" className={styles.primary}>
+
+              {/* Hire Me */}
+              <a
+                href="#contact"
+                className={styles.primary}
+              >
                 Hire Me
                 <FaArrowRight />
               </a>
 
-              <a href="/resume.pdf" className={styles.secondary}>
+              {/* Download CV */}
+              <a
+                href="/resume.pdf"
+                download="Emmanuel-Obazee-Marvellous-CV.pdf"
+                className={styles.secondary}
+              >
                 <FaDownload />
                 Download CV
               </a>
+
             </div>
 
+            {/* Social Links */}
+
             <div className={styles.socials}>
+
               <a
                 href="https://github.com/black-marvy"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
               >
                 <FaGithub />
               </a>
@@ -85,14 +109,17 @@ function Hero() {
               <a
                 href="https://www.linkedin.com/in/emmanuel-marvel-6b49353b5/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin />
               </a>
+
             </div>
+
           </motion.div>
 
-          {/* ================= RIGHT ================= */}
+          {/* ================= RIGHT SIDE ================= */}
 
           <motion.div
             className={styles.right}
@@ -100,41 +127,50 @@ function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className={styles.imageWrapper}>
-              {/* Floating Icons */}
 
+            <div className={styles.imageWrapper}>
+
+              {/* Floating React Icon */}
               <div className={`${styles.icon} ${styles.react}`}>
                 <FaReact />
               </div>
 
+              {/* Floating Node Icon */}
               <div className={`${styles.icon} ${styles.node}`}>
                 <FaNodeJs />
               </div>
 
+              {/* Floating JavaScript Icon */}
               <div className={`${styles.icon} ${styles.js}`}>
                 <FaJsSquare />
               </div>
 
+              {/* Floating Express Icon */}
               <div className={`${styles.icon} ${styles.express}`}>
                 <SiExpress />
               </div>
 
+              {/* Floating Vite Icon */}
               <div className={`${styles.icon} ${styles.vite}`}>
                 <SiVite />
               </div>
 
-              {/* Rings */}
-
+              {/* Decorative Rings */}
               <div className={styles.ringOne}></div>
               <div className={styles.ringTwo}></div>
 
-              {/* Profile */}
-
+              {/* Profile Image */}
               <div className={styles.imageBox}>
-               <img src= {profile}  alt="" />
+                <img
+                  src={profile}
+                  alt="Emmanuel Obazee Marvellous"
+                />
               </div>
+
             </div>
+
           </motion.div>
+
         </div>
 
         {/* Scroll Indicator */}
@@ -152,9 +188,12 @@ function Hero() {
         >
           Scroll Down
         </motion.a>
+
       </div>
+
     </section>
   );
 }
 
 export default Hero;
+

@@ -16,42 +16,42 @@ const services = [
     icon: <FaLaptopCode />,
     title: "Frontend Development",
     description:
-      "Responsive and modern React applications with reusable components and clean architecture.",
+      "Building modern, responsive and high-performance websites using React, JavaScript, HTML5 and CSS3.",
   },
 
   {
     icon: <FaPalette />,
-    title: "UI Implementation",
+    title: "UI / UX Implementation",
     description:
-      "Transforming designs into clean, responsive and accessible user interfaces.",
+      "Transforming Figma and design concepts into beautiful, pixel-perfect and responsive user interfaces.",
   },
 
   {
     icon: <FaMobileAlt />,
-    title: "Responsive Design",
+    title: "Responsive Web Design",
     description:
-      "Websites that work beautifully across desktop, tablet and mobile devices.",
+      "Creating websites that look and perform perfectly across desktops, tablets and mobile devices.",
   },
 
   {
     icon: <FaServer />,
-    title: "REST API Integration",
+    title: "API Integration",
     description:
-      "Connecting frontend applications to backend services using modern APIs.",
+      "Connecting frontend applications with REST APIs, Express backends and third-party services.",
   },
 
   {
     icon: <FaRocket />,
-    title: "Performance",
+    title: "Website Optimization",
     description:
-      "Optimising websites for speed, responsiveness and smooth user experience.",
+      "Improving loading speed, accessibility, SEO and overall website performance for better user experience.",
   },
 
   {
     icon: <FaCode />,
     title: "Clean Code",
     description:
-      "Writing maintainable, scalable and well-structured React applications.",
+      "Developing scalable, reusable and maintainable code following modern React best practices.",
   },
 ];
 
@@ -67,11 +67,13 @@ function Services() {
         >
           <span>WHAT I DO</span>
 
-          <h2>Services</h2>
+          <h2>What I Can Do For You</h2>
 
           <p>
-            I build modern web applications with a focus on performance, clean
-            design and user experience.
+            I specialize in creating modern, responsive and user-focused web
+            applications using the latest frontend technologies. From beautiful
+            user interfaces to scalable React applications, I deliver solutions
+            that are fast, clean and reliable.
           </p>
         </motion.div>
 
@@ -80,14 +82,39 @@ function Services() {
             <motion.div
               key={index}
               className={styles.card}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{
+                opacity: 0,
+                y: 60,
+                scale: 0.9,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              whileHover={{
+                y: -15,
+                scale: 1.03,
+              }}
               viewport={{ once: true }}
               transition={{
+                duration: 0.5,
                 delay: index * 0.1,
               }}
             >
-              <div className={styles.icon}>{service.icon}</div>
+              <motion.div
+                className={styles.icon}
+                whileHover={{
+                  rotate: -10,
+                  scale: 1.15,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                }}
+              >
+                {service.icon}
+              </motion.div>
 
               <h3>{service.title}</h3>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes, FaDownload } from "react-icons/fa";
+import { FaBars, FaTimes, FaFileAlt } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
@@ -62,10 +62,10 @@ function Navbar() {
 
           {/* Right Side */}
           <div className={styles.right}>
-            <a href="/resume.pdf" className={styles.resume}>
-              <FaDownload />
+            <NavLink to="/resume" className={styles.resume}>
+              <FaFileAlt />
               Resume
-            </a>
+            </NavLink>
 
             <button
               className={styles.menuBtn}

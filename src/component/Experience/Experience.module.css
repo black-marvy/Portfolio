@@ -42,17 +42,26 @@
   margin: auto;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
+.timeline::before{
+  content:"";
 
-  left: 35px;
-  top: 0;
+  position:absolute;
 
-  width: 3px;
-  height: 100%;
+  left:35px;
+  top:0;
 
-  background: linear-gradient(var(--primary), var(--secondary));
+  width:4px;
+  height:100%;
+
+  border-radius:30px;
+
+  background:linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--secondary)
+  );
+
+  box-shadow:0 0 20px rgba(59,130,246,.35);
 }
 
 .item {
@@ -61,7 +70,7 @@
   display: flex;
   gap: 30px;
 
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .icon {
@@ -82,9 +91,36 @@
 
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 
+  position: relative;
+
   z-index: 2;
 
   box-shadow: var(--shadow);
+
+  transition: 0.35s ease;
+}
+
+.icon::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: inherit;
+
+  filter: blur(18px);
+
+  opacity: 0.45;
+
+  z-index: -1;
+}
+
+.item:hover .icon {
+  transform: scale(1.08) rotate(-8deg);
 }
 
 .content {
@@ -101,6 +137,35 @@
   backdrop-filter: blur(18px);
 
   transition: var(--transition);
+  position: relative;
+
+  overflow: hidden;
+}
+.content::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:80%;
+  height:100%;
+
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+
+  transform:skewX(-25deg);
+
+  transition:.8s;
+}
+
+.content:hover::before{
+  left:150%;
 }
 
 .content:hover {
@@ -113,11 +178,21 @@
 
 .content span {
   display: inline-block;
-  margin-bottom: 12px;
+
+  padding: 6px 14px;
+
+  margin-bottom: 16px;
+
+  border-radius: 30px;
+
+  background: rgba(59,130,246,.12);
+
+  border: 1px solid rgba(59,130,246,.25);
 
   color: var(--accent);
 
-  font-size: 0.9rem;
+  font-size: .85rem;
+
   font-weight: 600;
 }
 
@@ -127,9 +202,13 @@
 }
 
 .content h4 {
-  color: #bdbdbd;
+  color: var(--accent);
+
   margin-bottom: 18px;
-  font-weight: 500;
+
+  font-size: 1rem;
+
+  font-weight: 600;
 }
 
 .content p {

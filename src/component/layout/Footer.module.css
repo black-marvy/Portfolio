@@ -14,13 +14,22 @@
 }
 
 .brand h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
   color: var(--white);
-  font-size: 2rem;
-  margin-bottom: 20px;
 }
 
 .brand h2 span {
-  color: var(--accent);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .brand p {
@@ -78,9 +87,17 @@
 }
 
 .icons a:hover {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: translateY(-8px) rotate(-8deg);
 
-  transform: translateY(-6px);
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  border-color: transparent;
+
+  box-shadow: 0 15px 35px rgba(59,130,246,.35);
 }
 
 .bottom {
@@ -101,33 +118,58 @@
 }
 
 .topButton {
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
+
+  border: none;
 
   border-radius: 50%;
+
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border: none;
-
-  cursor: pointer;
-
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  font-size: 1.2rem;
 
   color: white;
 
-  font-size: 1.2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
 
-  transition: var(--transition);
+  transition: all .35s ease;
 }
 
 .topButton:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow);
+  transform: translateY(-8px) scale(1.08);
+
+  box-shadow: 0 18px 40px rgba(59,130,246,.35);
 }
 
+.footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 500px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    transparent
+  );
+}
 @media (max-width: 992px) {
   .container {
     grid-template-columns: 1fr;

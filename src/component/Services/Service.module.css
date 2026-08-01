@@ -72,7 +72,15 @@
 }
 
 .card:hover .icon {
-  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.45);
+}
+
+.icon svg {
+  transition: 0.35s ease;
+}
+
+.card:hover .icon svg {
+  transform: scale(1.15);
 }
 
 .card h3 {

@@ -1,20 +1,71 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
 import {
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
+  FaPaperPlane,
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
 
-import styles from "./Contact.module.css";
+import styles from "../../Styles/Contact.module.css";
 
 function Contact() {
-  return (
-    <section className={styles.contact} id="contact">
-      <div className="container">
-        {/* Heading */}
+  const [form, setForm] = useState({
+    Name: "",
+    Email: "",
+    Subject: "",
+    Message: "",
+  });
 
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      // Send message to your email
+      await emailjs.send("service_0h4chl5", "template_l534sfn", form, {
+        publicKey: "pNuIRYIUBYY4aB9dh",
+      });
+
+      // Send automatic reply to the client
+      await emailjs.send("service_0h4chl5", "template_m0axxrh", form, {
+        publicKey: "pNuIRYIUBYY4aB9dh",
+      });
+
+      alert("✅ Message sent successfully!");
+
+      setForm({
+        Name: "",
+        Email: "",
+        Subject: "",
+        Message: "",
+      });
+    } catch (error) {
+      console.error("EMAILJS ERROR:", error);
+
+      alert("❌ Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section className={styles.contact}>
+      <div className="container">
         <motion.div
           className={styles.heading}
           initial={{ opacity: 0, y: 40 }}
@@ -23,20 +74,20 @@ function Contact() {
         >
           <span>CONTACT</span>
 
-          <h2>Let's Build Something Amazing</h2>
+          <h2>Let's Work Together</h2>
 
           <p>
-            Have a project, internship opportunity or collaboration in mind? I'd
-            love to hear from you.
+            I'm available for freelance work, internships, junior developer
+            roles and collaborations. Feel free to contact me.
           </p>
         </motion.div>
 
         <div className={styles.wrapper}>
-          {/* Left Side */}
+          {/* CONTACT INFORMATION */}
 
           <motion.div
             className={styles.info}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
@@ -45,7 +96,16 @@ function Contact() {
 
               <div>
                 <h3>Email</h3>
-                <p>emmanuelmarvel91@gmail.com</p>
+                
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=emmanuelmarvel91@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  emmanuelmarvel91@gmail.com
+                </a>
+                
               </div>
             </div>
 
@@ -54,7 +114,10 @@ function Contact() {
 
               <div>
                 <h3>Phone</h3>
-                <p>+234 XXX XXX XXXX</p>
+
+                <a href="tel:+2348144363077" className={styles.link}>
+                  +234 814 436 3077
+                </a>
               </div>
             </div>
 
@@ -63,7 +126,8 @@ function Contact() {
 
               <div>
                 <h3>Location</h3>
-                <p>Nigeria</p>
+
+                <p>Benin City, Edo State, Nigeria</p>
               </div>
             </div>
 
@@ -86,23 +150,64 @@ function Contact() {
             </div>
           </motion.div>
 
-          {/* Right Side */}
+          {/* CONTACT FORM */}
 
           <motion.form
             className={styles.form}
-            initial={{ opacity: 0, x: 50 }}
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <input type="text" placeholder="Your Name" />
+            <div className={styles.inputGroup}>
+              <input
+                type="text"
+                name="Name"
+                placeholder="Your Name"
+                value={form.Name}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-            <input type="email" placeholder="Your Email" />
+            <div className={styles.inputGroup}>
+              <input
+                type="email"
+                name="Email"
+                placeholder="Email Address"
+                value={form.Email}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-            <input type="text" placeholder="Subject" />
+            <div className={styles.inputGroup}>
+              <input
+                type="text"
+                name="Subject"
+                placeholder="Subject"
+                value={form.Subject}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-            <textarea rows="6" placeholder="Write your message..."></textarea>
+            <div className={styles.inputGroup}>
+              <textarea
+                rows="6"
+                name="Message"
+                placeholder="Write your message..."
+                value={form.Message}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-            <button type="submit">Send Message</button>
+            <button type="submit" className={styles.button} disabled={loading}>
+              <FaPaperPlane />
+
+              {loading ? "Sending..." : "Send Message"}
+            </button>
           </motion.form>
         </div>
       </div>

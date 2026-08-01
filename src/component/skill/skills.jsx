@@ -103,12 +103,16 @@ function Skills() {
               </div>
 
               <div className={styles.progress}>
-                <div
+                <motion.div
                   className={styles.fill}
-                  style={{
-                    width: skill.level,
+                  initial={{ width: 0 }}
+                  whileInView={{ width: skill.level }}
+                  transition={{
+                    duration: 1.2,
+                    delay: index * 0.08,
                   }}
-                ></div>
+                  viewport={{ once: true }}
+                />
               </div>
             </motion.div>
           ))}

@@ -54,8 +54,32 @@
   backdrop-filter: blur(18px);
 
   transition: var(--transition);
+
+  position: relative;
+
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -90px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(rgba(59, 130, 246, 0.15), transparent 70%);
+
+  transition: 0.4s ease;
 }
 
+.card:hover::before {
+  transform: scale(1.4);
+}
 .card:hover {
   transform: translateY(-10px);
 
@@ -87,6 +111,12 @@
   color: white;
 
   background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  transition: all 0.35s ease;
+}
+
+.card:hover .icon {
+  transform: rotate(-8deg) scale(1.1);
 }
 
 .top h3 {
@@ -117,7 +147,7 @@
 
   background: linear-gradient(90deg, var(--primary), var(--secondary));
 
-  transition: width 1.2s ease;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
 }
 
 @media (max-width: 768px) {

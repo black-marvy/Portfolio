@@ -12,7 +12,7 @@ import ScrollTop from "./component/ScrollTop/ScrollTop";
 import ThemeToggle from "./component/ThemeToggle/ThemeToggle";
 import CursorGlow from "./component/CursorGlow/CursorGlow";
 
-// Pages
+// Main Pages
 import Home from "./page/Home";
 import About from "./page/About";
 import Project from "./page/Project";
@@ -21,6 +21,11 @@ import Contact from "./page/Contact";
 import Blog from "./page/Blog";
 import Resume from "./page/Resume";
 import NotFound from "./page/NotFound";
+
+// Blog Pages
+import ReactComponents from "./page/blog/ReactComponent";
+import JavaScriptES6 from "./page/blog/JavaScriptES6";
+import ExpressGuide from "./page/blog/ExpressGuide";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,13 +48,14 @@ function App() {
 
   return (
     <>
-    <ScrollProgress />
+      <ScrollProgress />
       <Background />
-       <CursorGlow />
+      <CursorGlow />
       <Navbar />
 
       <main>
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
@@ -57,11 +63,28 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/resume" element={<Resume />} />
-          
 
+          {/* Blog Articles */}
+          <Route
+            path="/blog/react-components"
+            element={<ReactComponents />}
+          />
+
+          <Route
+            path="/blog/javascript-es6"
+            element={<JavaScriptES6 />}
+          />
+
+          <Route
+            path="/blog/express-guide"
+            element={<ExpressGuide />}
+          />
+
+          {/* 404 Page */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+
       <ThemeToggle />
       <ScrollTop />
       <Footer />
