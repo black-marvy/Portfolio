@@ -25,3 +25,18 @@
     left 0.08s linear,
     top 0.08s linear;
 }
+@media (max-width: 768px) {
+.glow {
+width: 200px;
+height: 200px;
+filter: blur(30px);
+}
+}
+
+@media (max-width: 480px) {
+.glow {
+width: 150px;
+height: 150px;
+filter: blur(25px);
+}
+}

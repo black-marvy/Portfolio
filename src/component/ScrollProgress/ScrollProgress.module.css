@@ -12,3 +12,8 @@
 
   transition: 0.15s;
 }
+@media (max-width: 480px) {
+.progress {
+height: 3px;
+}
+}

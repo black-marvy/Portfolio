@@ -107,3 +107,71 @@ body.light {
 
   color: var(--white);
 }
+@media (max-width: 992px) {
+.container {
+width: min(94%, var(--container));
+}
+
+section {
+padding: 90px 0;
+}
+}
+
+@media (max-width: 768px) {
+.container {
+width: 100%;
+max-width: 100%;
+padding-left: 18px;
+padding-right: 18px;
+}
+
+section {
+padding: 75px 0;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+}
+
+@media (max-width: 500px) {
+.container {
+padding-left: 15px;
+padding-right: 15px;
+}
+
+section {
+padding: 60px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+max-width: 100%;
+overflow-wrap: break-word;
+}
+
+p {
+overflow-wrap: break-word;
+}
+
+button,
+a {
+max-width: 100%;
+}
+}
+
+@media (max-width: 360px) {
+.container {
+padding-left: 12px;
+padding-right: 12px;
+}
+
+section {
+padding: 50px 0;
+}
+}
