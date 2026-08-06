@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaUserGraduate, FaLaptopCode, FaBullseye } from "react-icons/fa";
 import styles from "./About.module.css";
+import {Link} from "react-router-dom";
 
 function About() {
   return (
@@ -35,9 +36,11 @@ function About() {
               and building solutions that make life easier.
             </p>
 
-            <a href="/resume" className={styles.btn}>
+            
+
+            <Link to="/resume" className={styles.btn}>
               View Resume
-            </a>
+            </Link>
           </motion.div>
 
           {/* Right Side */}
