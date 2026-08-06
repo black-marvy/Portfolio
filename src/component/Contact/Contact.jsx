@@ -67,10 +67,11 @@ function Contact() {
     <section className={styles.contact}>
       <div className="container">
         <motion.div
-          className={styles.heading}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className={styles.info}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
           <span>CONTACT</span>
 
@@ -87,7 +88,7 @@ function Contact() {
 
           <motion.div
             className={styles.info}
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
@@ -96,7 +97,7 @@ function Contact() {
 
               <div>
                 <h3>Email</h3>
-                
+
                 <a
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=emmanuelmarvel91@gmail.com"
                   target="_blank"
@@ -105,7 +106,6 @@ function Contact() {
                 >
                   emmanuelmarvel91@gmail.com
                 </a>
-                
               </div>
             </div>
 
@@ -155,9 +155,10 @@ function Contact() {
           <motion.form
             className={styles.form}
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
           >
             <div className={styles.inputGroup}>
               <input

@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -18,30 +17,27 @@ import profile from "../../assets/image/profile.png";
 function Hero() {
   return (
     <section className={styles.hero} id="home">
-
       {/* Background Effects */}
       <div className={styles.blurOne}></div>
       <div className={styles.blurTwo}></div>
 
       <div className="container">
         <div className={styles.wrapper}>
-
           {/* ================= LEFT SIDE ================= */}
 
           <motion.div
             className={styles.left}
-            initial={{ opacity: 0, x: -70 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-
             <span className={styles.badge}>
               👋 Welcome to Black Marvy Tech
             </span>
 
             <h1>
               Building
-              <span> Modern Digital </span>
+              <span>Modern Digital</span>
               Experiences
             </h1>
 
@@ -69,19 +65,12 @@ function Hero() {
             </p>
 
             {/* Buttons */}
-
             <div className={styles.buttons}>
-
-              {/* Hire Me */}
-              <a
-                href="#contact"
-                className={styles.primary}
-              >
+              <a href="#contact" className={styles.primary}>
                 Hire Me
                 <FaArrowRight />
               </a>
 
-              {/* Download CV */}
               <a
                 href="/resume.pdf"
                 download="Emmanuel-Obazee-Marvellous-CV.pdf"
@@ -90,13 +79,10 @@ function Hero() {
                 <FaDownload />
                 Download CV
               </a>
-
             </div>
 
             {/* Social Links */}
-
             <div className={styles.socials}>
-
               <a
                 href="https://github.com/black-marvy"
                 target="_blank"
@@ -114,22 +100,18 @@ function Hero() {
               >
                 <FaLinkedin />
               </a>
-
             </div>
-
           </motion.div>
 
           {/* ================= RIGHT SIDE ================= */}
 
           <motion.div
             className={styles.right}
-            initial={{ opacity: 0, x: 70 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-
             <div className={styles.imageWrapper}>
-
               {/* Floating React Icon */}
               <div className={`${styles.icon} ${styles.react}`}>
                 <FaReact />
@@ -166,15 +148,11 @@ function Hero() {
                   alt="Emmanuel Obazee Marvellous"
                 />
               </div>
-
             </div>
-
           </motion.div>
-
         </div>
 
         {/* Scroll Indicator */}
-
         <motion.a
           href="#about"
           className={styles.scroll}
@@ -188,12 +166,9 @@ function Hero() {
         >
           Scroll Down
         </motion.a>
-
       </div>
-
     </section>
   );
 }
 
 export default Hero;
-

@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaGraduationCap,
+  FaCode,
+} from "react-icons/fa";
 import styles from "./Experience.module.css";
 
 const experiences = [
@@ -51,15 +55,20 @@ function Experience() {
             <motion.div
               key={index}
               className={styles.item}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.2,
               }}
             >
-              <div className={styles.icon}>{item.icon}</div>
+              <div className={styles.icon}>
+                {item.icon}
+              </div>
 
               <div className={styles.content}>
                 <span>{item.period}</span>
